@@ -1,86 +1,40 @@
-@charset "UTF-8";
 .square {
   height: 100px;
   width: 100px;
 }
 
 .blue {
-  background-color: blue;
+  background-color: #ff00bb;
+  -webkit-box-shadow: 4px -6px 45px 2px rgba(7, 254, 254, 0.5);
+          box-shadow: 4px -6px 45px 2px rgba(7, 254, 254, 0.5);
   position: relative;
-  -webkit-animation: MovingSquare 5s ease-in-out infinite;
-          animation: MovingSquare 5s ease-in-out infinite;
+  -webkit-animation: MovingSquare 3s ease-in-out infinite;
+          animation: MovingSquare 3s ease-in-out infinite;
 }
 
 @-webkit-keyframes MovingSquare {
   from {
-    left: 0;
+    left: 30%;
   }
   50% {
-    left: 50%;
+    left: 60%;
     border-radius: 50%;
   }
   to {
-    left: 0;
+    left: 30%;
   }
 }
 
 @keyframes MovingSquare {
   from {
-    left: 0;
+    left: 30%;
   }
   50% {
-    left: 50%;
+    left: 60%;
     border-radius: 50%;
   }
   to {
-    left: 0;
+    left: 30%;
   }
-}
-
-.container {
-  margin-top: 3rem;
-  background-color: cornflowerblue;
-  width: 500px;
-  height: 500px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 1rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  cursor: pointer;
-}
-
-.container__box {
-  width: 100px;
-  height: 100px;
-  background-color: #00ff9d;
-}
-
-label {
-  display: block;
-  border: solid 2px #00ff9d;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  margin: 20px;
-  padding: 5px 10px;
-}
-
-#control:checked ~ .container div {
-  -webkit-transition: height 1s ease-in-out;
-  transition: height 1s ease-in-out;
-}
-
-#control ~ label::after {
-  content: "Есть переход";
-}
-
-#control:checked ~ label::after {
-  content: "Нет перехода";
 }
 /*# sourceMappingURL=style.css.map */
