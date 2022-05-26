@@ -1,0 +1,33 @@
+.container {
+  margin-top: 3rem;
+  background-color: cornflowerblue;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &__box {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(0, 255, 157);
+  }
+}
+label {
+  display: block;
+  border: solid 2px rgb(0, 255, 157);
+  width: fit-content;
+  margin: 20px;
+  padding: 5px 10px;
+}
+#control:checked ~ .container div {
+  transition: height 1s ease-in-out;
+}
+#control ~ label::after {
+  content: "Есть переход";
+}
+#control:checked ~ label::after {
+  content: "Нет перехода";
+}

@@ -1,0 +1,48 @@
+@charset "UTF-8";
+.container {
+  margin-top: 3rem;
+  background-color: cornflowerblue;
+  width: 500px;
+  height: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.container__box {
+  width: 100px;
+  height: 100px;
+  background-color: #00ff9d;
+}
+
+label {
+  display: block;
+  border: solid 2px #00ff9d;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 20px;
+  padding: 5px 10px;
+}
+
+#control:checked ~ .container div {
+  -webkit-transition: height 1s ease-in-out;
+  transition: height 1s ease-in-out;
+}
+
+#control ~ label::after {
+  content: "Есть переход";
+}
+
+#control:checked ~ label::after {
+  content: "Нет перехода";
+}
+/*# sourceMappingURL=style.css.map */
