@@ -1,4 +1,42 @@
 @charset "UTF-8";
+.square {
+  height: 100px;
+  width: 100px;
+}
+
+.blue {
+  background-color: blue;
+  position: relative;
+  -webkit-animation: MovingSquare 5s ease-in-out infinite;
+          animation: MovingSquare 5s ease-in-out infinite;
+}
+
+@-webkit-keyframes MovingSquare {
+  from {
+    left: 0;
+  }
+  50% {
+    left: 50%;
+    border-radius: 50%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes MovingSquare {
+  from {
+    left: 0;
+  }
+  50% {
+    left: 50%;
+    border-radius: 50%;
+  }
+  to {
+    left: 0;
+  }
+}
+
 .container {
   margin-top: 3rem;
   background-color: cornflowerblue;
