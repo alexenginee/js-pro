@@ -1,59 +1,154 @@
+///////////////////////////////////////////////////////////////////// square blue
+
 .square {
   height: 100px;
   width: 100px;
 }
 
 .blue {
-  background-color: blue;
+  background-color: rgb(255, 255, 255);
   position: relative;
   animation: MovingSquare 5s ease-in-out infinite;
 }
 
 @keyframes MovingSquare {
   from {
-    left: 0;
+    left: 30%;
+    background-color: rgb(255, 255, 255);
   }
 
   50% {
-    left: 50%;
+    left: 60%;
     border-radius: 50%;
+    background-color: rgb(248, 0, 0);
   }
 
   to {
-    left: 0;
+    left: 30%;
+    background-color: rgb(255, 255, 255);
   }
 }
+///////////////////////////////////////////////////////////////////// three squares
+label {
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
+  border: 2px solid rgb(114, 105, 105);
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+label:hover {
+  border: 2px solid black;
+}
 
-// .container {
-//   margin-top: 3rem;
-//   background-color: cornflowerblue;
-//   width: 500px;
-//   height: 500px;
-//   display: flex;
-//   gap: 1rem;
-//   justify-content: center;
-//   align-items: center;
-//   cursor: pointer;
+.container {
+  display: flex;
+  height: 150px;
+  align-items: flex-end;
+  justify-content: space-around;
+  width: 90%;
+  margin: auto;
+  background: rgba(126, 125, 125, 0.8);
+  cursor: pointer;
+  &__box {
+    height: 0;
+    width: 20%;
+  }
+  &__box:nth-of-type(1) {
+    background-color: #ffff;
+  }
+  &__box:nth-of-type(2) {
+    background-color: rgb(248, 6, 6);
+  }
+  &__box:nth-of-type(3) {
+    background-color: #ffff;
+  }
+}
+.container:hover div {
+  border-radius: 50%;
+  height: 100%;
+  transition: 0.3s ease-out;
+}
+.container:hover div:nth-of-type(2) {
+  transition: 1s ease-out;
+}
 
-//   &__box {
-//     width: 100px;
-//     height: 100px;
-//     background-color: rgb(0, 255, 157);
-//   }
-// }
-// label {
-//   display: block;
-//   border: solid 2px rgb(0, 255, 157);
-//   width: fit-content;
-//   margin: 20px;
-//   padding: 5px 10px;
-// }
-// #control:checked ~ .container div {
-//   transition: height 1s ease-in-out;
-// }
-// #control ~ label::after {
-//   content: "Есть переход";
-// }
-// #control:checked ~ label::after {
-//   content: "Нет перехода";
-// }
+#control ~ label::before {
+  content: "Нет перехода";
+}
+#control ~ label {
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#control:checked ~ .container div {
+  transition: height 0.5s ease-in-out;
+  border-radius: 50%;
+}
+#control:checked ~ .container div:nth-of-type(2) {
+  transition-delay: 1.5s;
+}
+#control:checked ~ .container div:nth-of-type(3) {
+  transition-delay: 1s;
+}
+#control:checked ~ label::before {
+  content: "Есть переход";
+}
+#control:checked ~ label {
+  box-shadow: none;
+}
+//////////////////////////////////////////////////////////////////////five squares
+
+.containerFive {
+  position: relative;
+  width: 25%;
+  padding-top: 25%;
+  background: rgb(82, 82, 82);
+  margin: auto;
+  .squareFive {
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    background: red;
+  }
+  .top {
+    top: 10px;
+    left: 10px;
+    width: calc(50% - 10px);
+    height: calc(50% - 10px);
+  }
+  .topp {
+    top: 10px;
+    right: 10px;
+    background: rgb(255, 255, 255);
+    width: calc(50% - 10px);
+    height: calc(50% - 10px);
+  }
+
+  .bottom {
+    bottom: 10px;
+    right: 10px;
+    width: calc(50% - 10px);
+    height: calc(50% - 10px);
+  }
+  .bottomm {
+    bottom: 10px;
+    left: 10px;
+    background: rgb(255, 255, 255);
+    width: calc(50% - 10px);
+    height: calc(50% - 10px);
+  }
+
+  .center {
+    opacity: 0.7;
+    background: rgb(247, 0, 226);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.containerFive:hover .center {
+  width: calc(50% - 10px);
+  height: calc(50% - 10px);
+  transition: 1s ease-in-out;
+}

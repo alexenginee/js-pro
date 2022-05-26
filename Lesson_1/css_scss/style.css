@@ -5,7 +5,7 @@
 }
 
 .blue {
-  background-color: blue;
+  background-color: white;
   position: relative;
   -webkit-animation: MovingSquare 5s ease-in-out infinite;
           animation: MovingSquare 5s ease-in-out infinite;
@@ -13,74 +13,189 @@
 
 @-webkit-keyframes MovingSquare {
   from {
-    left: 0;
+    left: 30%;
+    background-color: white;
   }
   50% {
-    left: 50%;
+    left: 60%;
     border-radius: 50%;
+    background-color: #f80000;
   }
   to {
-    left: 0;
+    left: 30%;
+    background-color: white;
   }
 }
 
 @keyframes MovingSquare {
   from {
-    left: 0;
+    left: 30%;
+    background-color: white;
   }
   50% {
-    left: 50%;
+    left: 60%;
     border-radius: 50%;
+    background-color: #f80000;
   }
   to {
-    left: 0;
+    left: 30%;
+    background-color: white;
   }
-}
-
-.container {
-  margin-top: 3rem;
-  background-color: cornflowerblue;
-  width: 500px;
-  height: 500px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 1rem;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  cursor: pointer;
-}
-
-.container__box {
-  width: 100px;
-  height: 100px;
-  background-color: #00ff9d;
 }
 
 label {
   display: block;
-  border: solid 2px #00ff9d;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  margin: 20px;
+  margin: 20px auto;
+  border: 2px solid #726969;
   padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+label:hover {
+  border: 2px solid black;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 150px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 90%;
+  margin: auto;
+  background: rgba(126, 125, 125, 0.8);
+  cursor: pointer;
+}
+
+.container__box {
+  height: 0;
+  width: 20%;
+}
+
+.container__box:nth-of-type(1) {
+  background-color: #ffff;
+}
+
+.container__box:nth-of-type(2) {
+  background-color: #f80606;
+}
+
+.container__box:nth-of-type(3) {
+  background-color: #ffff;
+}
+
+.container:hover div {
+  border-radius: 50%;
+  height: 100%;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+.container:hover div:nth-of-type(2) {
+  -webkit-transition: 1s ease-out;
+  transition: 1s ease-out;
+}
+
+#control ~ label::before {
+  content: "Нет перехода";
+}
+
+#control ~ label {
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 #control:checked ~ .container div {
-  -webkit-transition: height 1s ease-in-out;
-  transition: height 1s ease-in-out;
+  -webkit-transition: height 0.5s ease-in-out;
+  transition: height 0.5s ease-in-out;
+  border-radius: 50%;
 }
 
-#control ~ label::after {
+#control:checked ~ .container div:nth-of-type(2) {
+  -webkit-transition-delay: 1.5s;
+          transition-delay: 1.5s;
+}
+
+#control:checked ~ .container div:nth-of-type(3) {
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+
+#control:checked ~ label::before {
   content: "Есть переход";
 }
 
-#control:checked ~ label::after {
-  content: "Нет перехода";
+#control:checked ~ label {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.containerFive {
+  position: relative;
+  width: 25%;
+  padding-top: 25%;
+  background: #525252;
+  margin: auto;
+}
+
+.containerFive .squareFive {
+  position: absolute;
+  width: 0%;
+  height: 0%;
+  background: red;
+}
+
+.containerFive .top {
+  top: 10px;
+  left: 10px;
+  width: calc(50% - 10px);
+  height: calc(50% - 10px);
+}
+
+.containerFive .topp {
+  top: 10px;
+  right: 10px;
+  background: white;
+  width: calc(50% - 10px);
+  height: calc(50% - 10px);
+}
+
+.containerFive .bottom {
+  bottom: 10px;
+  right: 10px;
+  width: calc(50% - 10px);
+  height: calc(50% - 10px);
+}
+
+.containerFive .bottomm {
+  bottom: 10px;
+  left: 10px;
+  background: white;
+  width: calc(50% - 10px);
+  height: calc(50% - 10px);
+}
+
+.containerFive .center {
+  opacity: 0.7;
+  background: #f700e2;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.containerFive:hover .center {
+  width: calc(50% - 10px);
+  height: calc(50% - 10px);
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
 }
 /*# sourceMappingURL=style.css.map */
