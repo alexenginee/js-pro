@@ -1,7 +1,5 @@
- Homework 36
-============
 ```json
- [
+ const films[
         {
 					id: 1
 					title: "Black Widow",
@@ -59,7 +57,7 @@
 					boxOffice: "$460,998,507",
 					production: "Lucasfilm Ltd.",
 				},
-				{ 
+				{
 					id: 4,
 					title: "Harry Potter and the Half-Blood Prince",
 					year: 2009,
@@ -76,7 +74,7 @@
 					imdbVotes: 492245,
 					boxOffice: "$302,305,431",
 					production: "Heyday Films, Warner Bros.",
-				}, 
+				},
 				{
 					title: "Harry Potter and the Sorcerer's Stone",
 					year: 2001,
@@ -94,6 +92,6 @@
 					boxOffice: "$318,087,620",
 					production: "1492 Pictures, Heyday Films, Warner Brothers",
 				}
-        
+
     ]
 ```
