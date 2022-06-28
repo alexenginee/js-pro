@@ -1,9 +1,14 @@
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import { getInvoice } from "../data";
 
 export default function Invoice() {
   let params = useParams();
   let invoice = getInvoice(parseInt(params.invoiceId, 10));
+
+  if (!invoice) {
+    return <Navigate to="/404" />;
+  }
+
   return (
     <main style={{ padding: "1rem" }}>
       <h2>Total Due: {invoice.amount}</h2>
